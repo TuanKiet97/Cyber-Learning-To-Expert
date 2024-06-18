@@ -1,0 +1,35 @@
+A records handle mapping domain names to Ips
+MX records specifiles mail servers
+CNAME records do domain name to domain name mapping
+TXT records store textual data releated to the domain name
+NS records specify DNS servers
+
+
+DNSMap tools:
+
+ARP and PING ICMP
+- Stealthy in nature
+- More reliable
+
+zoro@zoro-noa:~$ echo -e "GET / HTTP/1.1\nHost: pluralsight.com\n\n" >&3
+zoro@zoro-noa:~$ cat <&3
+zoro@zoro-noa:~$ exec 3<>/dev/tcp/pluralsight.com/80
+zoro@zoro-noa:~$ echo -e "GET / HTTP/1.1\nHost: pluralsight.com\n\n" >&3
+zoro@zoro-noa:~$ cat <&3
+HTTP/1.1 301 Moved Permanently
+Server: awselb/2.0
+Date: Mon, 17 Jun 2024 18:30:13 GMT
+Content-Type: text/html
+Content-Length: 134
+Connection: keep-alive
+Location: https://www.pluralsight.com:443/
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+</body>
+</html>
+
+
+https://gtfobins.github.io/
